@@ -34,7 +34,7 @@
                 <div class="card-body">
                   <h5 class="card-title">软件工程交流群</h5>
                   <p class="card-text">698876126</p>
-                  <a href="#" class="btn btn-danger">复制</a>
+                  <button type="button" class="btn btn-sm btn-outline-danger" onclick="return copy(this, 698876126)">复制</button>
                 </div>
               </div>
             </div>
@@ -56,6 +56,20 @@
     </footer>
     <script src="/JS/bootstrap.js"></script>
 
+<script>
+    function copy(btn, groupNumber) {
+        const el = document.createElement("textarea");
+        el.value = groupNumber;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand("copy");
+        document.body.removeChild(el);
+        btn.innerHTML = "复制成功";
+        setTimeout(() => (btn.innerHTML = "复制"), 3000);
+      }
 
+</script>
+
+    
 </body>
 </html>
