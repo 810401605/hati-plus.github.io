@@ -25,15 +25,24 @@
         <div class="alert alert-danger">
             <strong>警告！</strong> HATI-Plus 团队对于以下 QQ 群的群成员组成、聊天内容不作保证。 在群聊中，请保护好个人隐私，不要轻易相信陌生人，谨防上当受骗。
         </div>
-        <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">软件工程交流群</h5>
-              <p class="card-text" id="text">698876126</p>
-              <button class="btn btn-danger " onclick="return copy(this,698876126)">复制</button>
+
+
+          <!--line 1-->
+          <div class="row">
+            <div class="col-sm-4" style="margin-bottom: 2rem;">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">软件工程交流群</h5>
+                  <p class="card-text">698876126</p>
+                  <button type="button" class="btn btn-sm btn-outline-danger" onclick="return copy(this, 698876126)">复制</button>
+                </div>
+              </div>
             </div>
           </div>
 
-        <p class="text-center"> 如果你希望将自己维护的 QQ 群加入本清单，或在加群时碰到了问题，请邮件联系 <a href="mailto:810401605@qq.com"> 810401605@qq.com</a></p>
+
+
+        <p class="text-center"> 如果你希望将自己维护的 QQ 群加入本清单，或在加群时碰到了问题，请邮件联系 <a href="mailto:810401605@qq.com" class="text-danger"> 810401605@qq.com</a></p>
     </div>
    
     <footer class="footer text-center mt-auto py-3">
@@ -42,7 +51,36 @@
         </div>
     </footer>
     <script src="/JS/bootstrap.js"></script>
+    
+ <script>
 
+function copy(btn, groupNumber) {
+    const el = document.createElement("textarea");
+    el.value = groupNumber;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand("copy");
+    document.body.removeChild(el);
+    btn.innerHTML = "复制成功";
+    setTimeout(() => (btn.innerHTML = "复制"), 3000);
+  }
+  
+</script>
 
+<script>
+    function copy(btn, groupNumber) {
+        const el = document.createElement("textarea");
+        el.value = groupNumber;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand("copy");
+        document.body.removeChild(el);
+        btn.innerHTML = "复制成功";
+        setTimeout(() => (btn.innerHTML = "复制"), 3000);
+      }
+
+</script>
+
+  
 </body>
 </html>
